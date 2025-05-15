@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Truth or Dare</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f3f3f3;
+            color: #333;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        h1 {
+            color: #4CAF50;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            width: 200px;
+            border-radius: 10px;
+            transition: all 0.3s ease; /* Smooth transition for hover effects */
+        }
+        p {
+            font-size: 15px;
+            color: #666;
+            text-align: center;
+        }
+        button:hover {
+            background-color: #4CAF50;
+            color: white;
+        }
+        samp {
+            font-family: 'Courier New', Courier, monospace;
+            color: #555;
+        }
+        h3 {
+            color: #333;
+            
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .btn1 {
+
+        }
+        .btn1:hover {
+            background-color: #ffd8d8;
+            color:  #333;
+            width: 220px;
+            height: 45px;
+        }
+        .btn2 {
+            
+        }
+        .btn2:hover {
+            background-color: rgb(62, 62, 248);
+            color: white;
+            width: 220px;
+            height: 45px;
+        }
+        .btn3 {
+            
+        }
+        .btn3:hover {
+            background-color: rgb(253, 57, 57);
+            color: white;
+            width: 220px;
+            height: 45px;
+        }
+        @media (max-width: 768px){
+            body {
+                flex-direction: column;
+                padding: 20px;
+            }
+            .container {
+                width: 400px;
+                
+              
+            }
+            button {
+                width: 100%;
+                margin: 5px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container"> 
+        <div class="welcome-message">
+            <h1>
+                <samp><span>Welcome</span> to Truth or Dare</samp> 
+            </h1>
+            <p><i>Get ready to play an exciting game! Whether you're strategizing or just having fun, it's time to bring your best and enjoy every moment. Let the excitement begin.</i></p>
+        </div>
+        <div>
+            <h3><samp>Select a game mode</samp></h3>
+            <button class="btn1" onclick="window.location.href='partyModerules.html'">Party mode</button>
+            <button class="btn2" onclick="window.location.href='familyGameRules.html'">Family friendly</button><br>
+            <button class="btn3" onclick="window.location.href='18Gamerules.html'">18+(Adults only)</button>
+        </div>
+    </div>
+</body>
+</html>

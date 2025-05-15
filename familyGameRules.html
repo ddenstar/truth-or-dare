@@ -1,0 +1,287 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Truth or Dare</title>
+    <style>
+        .main1-container {
+            font-family: Arial, sans-serif;
+            background-color: #f3f3f3;
+            color: #333;
+            display: grid; /* Turn the body into a grid */
+            grid-template-columns: auto auto; /* Define rows for content */
+            justify-content: center; /* Center content horizontally */
+            align-items: center; /* Align content at the top */
+            gap: 20px; /* Add spacing between rows */
+            height: 100vh;
+            margin: 0;
+            padding: 20px;
+            height: 100vh;
+        }
+
+        .content-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Center content horizontally */
+            text-align: center; /* Center text within the container */
+        }
+
+        .players-container {
+           max-height: 100%;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            max-height: 530px;
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Center content horizontally */
+            text-align: center; /* Center text within the container */
+
+
+        }
+        .rules, .expectations {
+            padding: 10px;
+            background-color: #f7f6fc;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            
+        }
+
+        h1 {
+            color: #4CAF50;
+        }
+        samp {
+            font-family: 'Courier New', Courier, monospace;
+            color: #555;
+        }
+        .P-first {
+            font-size: 15px;
+            color: #666;
+            text-align: center;
+        }
+        .rulesAndExpectation-container {
+            display: flex;
+            flex-direction: row;
+            gap: 20px; /* Add space between the rules and expectations divs */
+        }
+        .rules, .expectations {
+            width: 45%;
+            display: flex;
+            flex-direction: column;
+            background-color: #f3f0ff;
+            border-radius: 10px;
+            padding: 10px;
+        }
+        .Bottom-container {
+            margin-top: 20px;
+            background-color: #f3f0ff;
+            height: auto;
+            max-height: 90px;
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            border-radius: 10px;
+        }
+        .player-input {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        .start-button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            width: 200px;
+            border-radius: 10px;
+            transition: all 0.3s ease; /* Smooth transition for hover effects */
+        }
+        .start-button:hover {
+            background-color: #fcf6f6;
+            color: white;
+            width: 220px;
+            height: 45px;
+        }
+        .player-list-container{
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            max-height: 400px;
+            overflow-y: auto; /* Allow scrolling if the list is too long */
+        }
+
+        /* Hide the scrollbar for WebKit browsers (e.g., Chrome, Safari) */
+        .player-list-container::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* Hide the scrollbar for Firefox */
+        .player-list-container {
+            scrollbar-width: none; /* Hide scrollbar in Firefox */
+        }
+
+        input{
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border: 2px solid #ccc;
+        }
+
+        .player-list-container ul {
+            list-style-type: none; /* Remove the bullet points */
+            padding: 0; /* Remove default padding */
+            margin: 0; /* Remove default margin */
+            width: 100px;
+        }
+
+        .rules ul, .expectations ul {
+            list-style-type: none; /* Remove bullet points for rules and expectations */
+            padding: 0; /* Remove default padding */
+            margin: 0; /* Remove default margin */
+        }
+
+        /* Style for the text inside ul and li */
+        .rules ul li, .expectations ul li, .player-list-container ul li {
+            font-family: 'Courier New', Courier, monospace; /* Set font style */
+            font-size: 16px; /* Adjust font size */
+            color: #333; /* Set text color */
+            margin-bottom: 10px; /* Add spacing between list items */
+        }
+
+        /* Optional: Add hover effect for list items */
+        .player-list-container ul li:hover {
+            background-color: #f0f0f0; /* Light background on hover */
+            border-radius: 5px; /* Rounded corners */
+            padding: 5px; /* Add padding for better readability */
+        }
+        @media (max-width: 768px){
+          .main1-container {
+                grid-template-columns: 1fr; /* Stack the columns on smaller screens */
+                height: auto; /* Allow height to adjust based on content */
+               /* Adjust padding for smaller screens */
+            }
+            .content-container, .players-container {
+                width: ; /* Full width on smaller screens */
+                max-width: none; /* Remove max-width restriction */
+            }
+            .rulesAndExpectation-container {
+                flex-direction: row; /* Stack rules and expectations vertically */
+                gap: 10px; /* Reduce gap between them */
+            }
+            .rules ul li, .expectations ul li, .player-list-container ul li{
+                font-size: 10px; /* Adjust font size for smaller screens */
+            }
+            .Bottom-container {
+                margin-top: 10px; /* Reduce margin for smaller screens */
+                padding: 10px; /* Add padding for better spacing */
+                font-size: 12px;
+            }
+
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="main1-container">
+        <div class="content-container">
+            <h1><Samp>FAMILY MODE</Samp></h1>
+            <p class="P-first"><samp>BEFORE WE START THIS GAME, HERE ARE LIST OF THINGS I WANT US TO GO OVER.</samp></p>
+            <div class="rulesAndExpectation-container">
+                <div class="rules">
+                    <ul>
+                        <li><h3><samp>TRUTH OR DARE - QUICK RULES</samp></h3></li>
+                        <li><samp>CHOOSE TRUTH OR DARE - NO SWITCHING.</samp></li>
+                        <li><samp>ONE SKIP PER PLAYER (SAY "PASS").</samp></li>
+                        <li><samp>BE RESPECTFUL - NO HERM, PRESSURE, OR PERSONAL STUFF.</samp></li>
+                        <li><samp>TRUTH: 30 SECS. DARE: 3 MINS HAVE FUN, STAY SAFE!</samp></li>
+                    </ul>
+                </div>
+                <div class="expectations">
+                    
+                    <ul>
+                        <li><h3><samp>Expectations</samp></h3></li>
+                        <li><samp>LAUGHS AND SURPRISES.</samp></li>
+                        <li><SAMp>SOME AWKWARD, FUN MOMENTS.</SAMp></li>
+                        <li><SAmp>RULES MUST BE FOLLOWED.</SAmp></li>
+                        <li><samp>CONSEQUENCES ARE PART OF THE GAME.</samp></li>
+                        <li><samp>PESPECT IS KEY - NO CROSSING THE LINE.</samp></li>
+                    </ul>
+                </div>
+                
+            </div>
+                <div class="Bottom-container">
+                    <h4><samp>I TAKE IT THAT YOU'VE READ THE RULES AND EXPECTATIONS. IF YOU HAVE NO FURTHER QUESTIONS, CLICK THE START BUTTON TO BEGIN THE GAME</samp></h4>
+                </div>      
+       </div>
+    
+        <div class="players-container">
+                <h2><samp>List of Players</samp></h2>
+                <p class="enterName">Enter Name</p>
+                <input type="text" placeholder="Enter player name" class="player-input"> 
+                <div class="player-list-container">
+                    <ul>
+    
+                    </ul>
+                </div>
+    
+                <button class="start-button"><samp>Start Game</samp></button>
+        </div>
+
+    </div>
+   
+
+    <script>
+        const playerInput = document.querySelector('.player-input');
+        const playerListContainer = document.querySelector('.player-list-container ul');
+        const startButton = document.querySelector('.start-button');
+        const enternmetoStart = document.querySelector('.enterName');
+    
+        let players = [];
+    
+        playerInput.addEventListener('keydown', (event) => {
+            if (event.key === 'Enter') {
+                let playerName = playerInput.value.trim();
+                if (playerName) {
+                    // Capitalize the first letter of the name
+                    playerName = playerName.charAt(0).toUpperCase() + playerName.slice(1).toLowerCase();
+
+                    const listItem = document.createElement('li');
+                    listItem.textContent = playerName;
+
+                    // Add click event to remove the name when clicked
+                    listItem.addEventListener('click', () => {
+                        playerListContainer.removeChild(listItem);
+                        players = players.filter(name => name !== playerName);
+                        localStorage.setItem('players', JSON.stringify(players));
+                    });
+
+                    playerListContainer.appendChild(listItem);
+                    players.push(playerName);
+                    localStorage.setItem('players', JSON.stringify(players));
+                    playerInput.value = '';
+                } else {
+                    alert('Please enter a player name.');
+                }
+            }
+        });
+    
+        startButton.addEventListener('click', () => {
+            if (playerListContainer.children.length < 2) {
+                enternmetoStart.textContent = 'Please enter at least 2 names.';
+                enternmetoStart.style.color = 'red';
+                return;
+            }
+            window.location.href = 'familyGameStart.html';
+        });
+    </script>
+    
+</body>
+</html>
